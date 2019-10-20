@@ -26,6 +26,8 @@ build/
 *.ipr
 *.iws
 *.idea
+complete/
+initial/
 
 # Spring Bootstrap artifacts
 
