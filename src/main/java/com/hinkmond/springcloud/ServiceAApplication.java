@@ -1,4 +1,4 @@
-package hello;
+package com.hinkmond.springcloud;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 @EnableDiscoveryClient
 @SpringBootApplication
-public class EurekaClientApplication {
+public class ServiceAApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class, args);
+        SpringApplication.run(ServiceAApplication.class, args);
     }
 }
 
 @RestController
-class ServiceInstanceRestController {
+class ServiceARestController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @RequestMapping("/service-instances/{applicationName}")
+    @RequestMapping("/fetch-service-instances/{applicationName}")
     public List<ServiceInstance> serviceInstancesByApplicationName(
             @PathVariable String applicationName) {
         return this.discoveryClient.getInstances(applicationName);
