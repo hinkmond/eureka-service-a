@@ -5,11 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-<<<<<<< HEAD
     <artifactId>eureka-service-a</artifactId>
-=======
-    <artifactId>eureka-server</artifactId>
->>>>>>> 79b2c6c6017fee05f774f7a6f0961550ba76d9da
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
@@ -38,9 +34,4 @@
             <version>2.8.5</version>
         </dependency>
     </dependencies>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 79b2c6c6017fee05f774f7a6f0961550ba76d9da
 </project>
