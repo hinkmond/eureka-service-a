@@ -1,16 +1,13 @@
 package com.hinkmond.springcloud;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+
 @EnableDiscoveryClient
 @SpringBootApplication
 public class ServiceAApplication {
@@ -21,13 +18,11 @@ public class ServiceAApplication {
 
 @RestController
 class ServiceARestController {
-
-    @Autowired
-    private DiscoveryClient discoveryClient;
-
-    @RequestMapping("/fetch-service-instances/{applicationName}")
-    public List<ServiceInstance> serviceInstancesByApplicationName(
-            @PathVariable String applicationName) {
-        return this.discoveryClient.getInstances(applicationName);
+    @RequestMapping("/calc-mortgage-pymt/{term}")
+    public String calculateMortgagePayment(
+            @PathVariable String term) {
+        // Calculate mortgage payment
+        double mortPymt = (135000.00 / Double.parseDouble(term));
+        return Double.toString(mortPymt);
     }
 }
